@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jasmine-node index.spec.js"
   },
-  "repository": "",
+  "repository": "https://github.com/petebacondarwin/node-canonical-path",
   "keywords": [
     "path",
     "forward",
