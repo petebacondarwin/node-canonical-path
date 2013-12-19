@@ -23,3 +23,4 @@ fns.forEach(function(fn) {
 props.forEach(function(prop) {
   exports[prop] = path[prop];
 });
+exports.canonical = canonicalPath;

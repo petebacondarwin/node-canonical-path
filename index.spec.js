@@ -14,4 +14,9 @@ describe("canonical-path", function() {
     });
   });
 
+  describe("canonical", function() {
+    it("should return a path with forward slashes", function() {
+      expect(path.canonical('a'+path.sep+'b'+path.sep+'c')).toEqual('a/b/c');
+    });
+  });
 });
