@@ -1,0 +1,21 @@
+{
+  "name": "canonical-path",
+  "version": "0.0.1",
+  "description": "paths that always use forward slashes",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node index.spec.js"
+  },
+  "repository": "",
+  "keywords": [
+    "path",
+    "forward",
+    "slashes",
+    "OS"
+  ],
+  "author": "Pete Bacon Darwin",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-node": "~1.12.0"
+  }
+}
