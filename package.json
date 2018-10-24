@@ -3,8 +3,9 @@
   "version": "0.0.2",
   "description": "paths that always use forward slashes",
   "main": "index.js",
+  "typings": "index.d.ts",
   "scripts": {
-    "test": "jasmine-node index.spec.js"
+    "test": "jasmine index.spec.js"
   },
   "repository": "https://github.com/petebacondarwin/node-canonical-path",
   "keywords": [
@@ -16,6 +17,6 @@
   "author": "Pete Bacon Darwin",
   "license": "MIT",
   "devDependencies": {
-    "jasmine-node": "~1.12.0"
+    "jasmine": "^3.2.0"
   }
 }
