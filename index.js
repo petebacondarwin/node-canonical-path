@@ -1,26 +1,26 @@
 var path = require('path');
-var i;
+var slashRegex = /\\/g;
 
-function canonicalPath(filePath) {
-  if( path.sep === '\\') {
-    filePath = filePath.replace(/\\/g, '/');
-  }
-  return filePath;
+function canonical(p) {
+  return p.replace(slashRegex, '/');
 }
 
 function wrapWithCanonical(fn) {
   return function() {
-    return canonicalPath(fn.apply(path, arguments));
+    return canonical(fn.apply(path, arguments));
   };
 }
 
-var fns = ['normalize', 'join', 'resolve', 'relative', 'dirname', 'basename', 'extname'];
-var props = ['sep', 'delimiter'];
+// Wrap the functions that return a path
+var toChange = ['normalize', 'join', 'resolve', 'relative', 'dirname', 'format'];
+toChange.forEach(function(fn) {
+  module.exports[fn] = wrapWithCanonical(path[fn]);
+});
+// and leave the rest alone
+var toLeave = ['basename', 'delimiter', 'extname', 'isAbsolute', 'parse', 'sep'];
+toLeave.forEach(function(prop) {
+  module.exports[prop] = path[prop];
+});
 
-fns.forEach(function(fn) {
-  exports[fn] = wrapWithCanonical(path[fn]);
-});
-props.forEach(function(prop) {
-  exports[prop] = path[prop];
-});
-exports.canonical = canonicalPath;
+module.exports.original = path;
+module.exports.canonical = canonical;
