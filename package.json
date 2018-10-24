@@ -1,6 +1,6 @@
 {
   "name": "canonical-path",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "paths that always use forward slashes",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -12,7 +12,8 @@
     "path",
     "forward",
     "slashes",
-    "OS"
+    "OS",
+    "windows"
   ],
   "author": "Pete Bacon Darwin",
   "license": "MIT",
